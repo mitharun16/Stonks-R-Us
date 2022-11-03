@@ -12,10 +12,10 @@
 		20A5C5792911AAE200B160A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20A5C5782911AAE200B160A1 /* Preview Assets.xcassets */; };
 		20B2C31B29144E8700B98DB2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2C31A29144E8700B98DB2 /* WelcomeView.swift */; };
 		20B2C31D29144FCA00B98DB2 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2C31C29144FCA00B98DB2 /* SplashView.swift */; };
-		20B2C31F2914588A00B98DB2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2C31E2914588A00B98DB2 /* UserViewModel.swift */; };
 		20B2C3212914589A00B98DB2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2C3202914589A00B98DB2 /* User.swift */; };
 		20B2C3232914590000B98DB2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2C3222914590000B98DB2 /* SignUpView.swift */; };
 		20B2C3252914590A00B98DB2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2C3242914590A00B98DB2 /* LoginView.swift */; };
+		20B2C32729146D0200B98DB2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2C32629146D0200B98DB2 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +25,10 @@
 		20A5C5782911AAE200B160A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		20B2C31A29144E8700B98DB2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		20B2C31C29144FCA00B98DB2 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		20B2C31E2914588A00B98DB2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		20B2C3202914589A00B98DB2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		20B2C3222914590000B98DB2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		20B2C3242914590A00B98DB2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		20B2C32629146D0200B98DB2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 		20B2C31829144E4100B98DB2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				20B2C31E2914588A00B98DB2 /* UserViewModel.swift */,
+				20B2C32629146D0200B98DB2 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -178,10 +178,10 @@
 			files = (
 				20A5C5722911AAE000B160A1 /* Stocks_R_USApp.swift in Sources */,
 				20B2C3252914590A00B98DB2 /* LoginView.swift in Sources */,
-				20B2C31F2914588A00B98DB2 /* UserViewModel.swift in Sources */,
 				20B2C31B29144E8700B98DB2 /* WelcomeView.swift in Sources */,
 				20B2C3212914589A00B98DB2 /* User.swift in Sources */,
 				20B2C3232914590000B98DB2 /* SignUpView.swift in Sources */,
+				20B2C32729146D0200B98DB2 /* UserViewModel.swift in Sources */,
 				20B2C31D29144FCA00B98DB2 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
