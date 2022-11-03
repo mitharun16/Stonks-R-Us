@@ -34,7 +34,8 @@ struct SplashView: View {
                             Image("LogoCircular")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 195)
+                                .frame(width: 300)
+                                .cornerRadius(25)
                         }
                         .onAppear
                         {
