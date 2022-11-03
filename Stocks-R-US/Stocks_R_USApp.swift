@@ -11,7 +11,7 @@ import SwiftUI
 struct Stocks_R_USApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }
