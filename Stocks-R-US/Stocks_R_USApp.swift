@@ -13,5 +13,7 @@ struct Stocks_R_USApp: App {
         WindowGroup {
             SplashView()
         }
+        
     }
+    
 }
