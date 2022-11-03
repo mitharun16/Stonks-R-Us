@@ -34,9 +34,15 @@ extension Color {
     }
 }
 
+
+
 struct WelcomeView: View {
-    @State private var isActive = false
     @State var userViewModel: UserViewModel = UserViewModel()
+    @State private var isPresentedSignIn = false
+    @State private var isPresentedSignUp = false
+    @State private var emailAddress = ""
+    @State private var username = ""
+    @State private var password = ""
     var body: some View {
         NavigationView {
             
@@ -72,14 +78,21 @@ struct WelcomeView: View {
                             
                         }
 
-                        NavigationLink(destination: SignUpView(userViewModel: $userViewModel), isActive: $isActive) {
+                            // Sign Up Button
                             Button {
-                                isActive = true
+                                emailAddress = ""
+                                username = ""
+                                password = ""
+                                isPresentedSignUp.toggle()
                             } label: {
                                 Label("Sign Up", systemImage: "")
                                 
                                 
                             }
+                            
+                            
+                        
+                        
                             .fontWeight(.bold)
                             .font(Font.system(size: 20))
                             .buttonStyle(.borderedProminent)
@@ -87,15 +100,29 @@ struct WelcomeView: View {
                             .tint(.pink)
                             .buttonBorderShape(.capsule)
                             .frame(height: 100, alignment: .center)
-                        }
-                        NavigationLink(destination: LoginView(userViewModel: $userViewModel), isActive: $isActive) {
+                            .alert("Sign Up to use Stonks R Us", isPresented: $isPresentedSignUp, actions: {
+                                TextField("Enter your Email", text: $emailAddress)
+                                        TextField("Create a Username", text: $username)
+                                        SecureField("Create a Password", text: $password)
+
+                                        
+                                        Button("Sign Up", action: {})
+                                        Button("Cancel", role: .cancel, action: {})
+                                    }, message: {
+                                        Text("Create an account to access all the features that Stonks R Us has to offer.")
+                                    })
+                            // Sign in Button
                             Button {
-                                isActive = true
+                                username = ""
+                                password = ""
+                                isPresentedSignIn.toggle()
+                                
                             } label: {
                                 Label("Sign In", systemImage: "")
                                 
                                 
                             }
+                            
                             .fontWeight(.bold)
                             .font(Font.system(size: 20))
                             .buttonStyle(.borderedProminent)
@@ -103,7 +130,17 @@ struct WelcomeView: View {
                             .tint(.pink)
                             .buttonBorderShape(.capsule)
                             .frame(height: 100, alignment: .center)
-                        }
+                            .alert("Sign In to Stonks R Us", isPresented: $isPresentedSignIn, actions: {
+                                        TextField("Username", text: $username)
+                                        Spacer()
+                                        SecureField("Password", text: $password)
+
+                                        
+                                        Button("Sign In", action: {})
+                                        Button("Cancel", role: .cancel, action: {})
+                                    }, message: {
+                                        Text("Enter credentials to view your watchlist and more.")
+                                    })
                         
                     }
                     
