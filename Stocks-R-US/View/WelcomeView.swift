@@ -106,7 +106,20 @@ struct WelcomeView: View {
                                         SecureField("Create a Password", text: $password)
 
                                         
-                                        Button("Sign Up", action: {})
+                                        Button("Sign Up", action: {
+                                            if(emailAddress.isEmpty || username.isEmpty || password.isEmpty)
+                                            {
+                                                emailAddress = ""
+                                                username = ""
+                                                password = ""
+                                                
+                                            }
+                                            else
+                                            {
+                                                userViewModel.createAccount(emailAddress: emailAddress, username: username, password: password)
+                                                
+                                            }
+                                        })
                                         Button("Cancel", role: .cancel, action: {})
                                     }, message: {
                                         Text("Create an account to access all the features that Stonks R Us has to offer.")
@@ -136,7 +149,18 @@ struct WelcomeView: View {
                                         SecureField("Password", text: $password)
 
                                         
-                                        Button("Sign In", action: {})
+                                        Button("Sign In", action: {
+                                            let checkLogin:Bool = userViewModel.checkLogin(username: username, password: password)
+                                            if(checkLogin)
+                                            {
+                                                // go to Next Screen
+                                            }
+                                            else
+                                            {
+                                                username = ""
+                                                password = ""
+                                            }
+                                        })
                                         Button("Cancel", role: .cancel, action: {})
                                     }, message: {
                                         Text("Enter credentials to view your watchlist and more.")
