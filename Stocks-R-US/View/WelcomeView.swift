@@ -37,16 +37,15 @@ extension Color {
 
 
 struct WelcomeView: View {
-    @State var userViewModel: UserViewModel = UserViewModel()
+    @State var showDetail: Bool = false
     @State private var isPresentedSignIn = false
     @State private var isPresentedSignUp = false
     @State private var emailAddress = ""
     @State private var username = ""
     @State private var password = ""
     var body: some View {
-        NavigationView {
-            
-            
+        NavigationView
+        {
             GeometryReader {
                 geo in ZStack
                 {
@@ -79,16 +78,7 @@ struct WelcomeView: View {
                         }
 
                             // Sign Up Button
-                            Button {
-                                emailAddress = ""
-                                username = ""
-                                password = ""
-                                isPresentedSignUp.toggle()
-                            } label: {
-                                Label("Sign Up", systemImage: "")
-                                
-                                
-                            }
+                        NavigationLink("Sign Up", destination: SignUpView().navigationBarBackButtonHidden())
                             
                             
                         
@@ -100,41 +90,9 @@ struct WelcomeView: View {
                             .tint(.pink)
                             .buttonBorderShape(.capsule)
                             .frame(height: 100, alignment: .center)
-                            .alert("Sign Up to use Stonks R Us", isPresented: $isPresentedSignUp, actions: {
-                                TextField("Enter your Email", text: $emailAddress)
-                                        TextField("Create a Username", text: $username)
-                                        SecureField("Create a Password", text: $password)
-
-                                        
-                                        Button("Sign Up", action: {
-                                            if(emailAddress.isEmpty || username.isEmpty || password.isEmpty)
-                                            {
-                                                emailAddress = ""
-                                                username = ""
-                                                password = ""
-                                                
-                                            }
-                                            else
-                                            {
-                                                userViewModel.createAccount(emailAddress: emailAddress, username: username, password: password)
-                                                
-                                            }
-                                        })
-                                        Button("Cancel", role: .cancel, action: {})
-                                    }, message: {
-                                        Text("Create an account to access all the features that Stonks R Us has to offer.")
-                                    })
+                           
                             // Sign in Button
-                            Button {
-                                username = ""
-                                password = ""
-                                isPresentedSignIn.toggle()
-                                
-                            } label: {
-                                Label("Sign In", systemImage: "")
-                                
-                                
-                            }
+                        NavigationLink("Sign In", destination: LoginView().navigationBarBackButtonHidden())
                             
                             .fontWeight(.bold)
                             .font(Font.system(size: 20))
@@ -143,34 +101,14 @@ struct WelcomeView: View {
                             .tint(.pink)
                             .buttonBorderShape(.capsule)
                             .frame(height: 100, alignment: .center)
-                            .alert("Sign In to Stonks R Us", isPresented: $isPresentedSignIn, actions: {
-                                        TextField("Username", text: $username)
-                                        Spacer()
-                                        SecureField("Password", text: $password)
-
-                                        
-                                        Button("Sign In", action: {
-                                            let checkLogin:Bool = userViewModel.checkLogin(username: username, password: password)
-                                            if(checkLogin)
-                                            {
-                                                // go to Next Screen
-                                            }
-                                            else
-                                            {
-                                                username = ""
-                                                password = ""
-                                            }
-                                        })
-                                        Button("Cancel", role: .cancel, action: {})
-                                    }, message: {
-                                        Text("Enter credentials to view your watchlist and more.")
-                                    })
-                        
+                                                   
                     }
                     
                 }
-                
+              
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
         }
     }
 }

@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Binding var userViewModel: UserViewModel
     var body: some View {
-        Text("Home Screen")
+        NavigationView {
+            VStack
+            {
+                Text("HomeScreen")
+            }
+            .navigationBarBackButtonHidden()
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(userViewModel: .constant(UserViewModel()))
     }
 }

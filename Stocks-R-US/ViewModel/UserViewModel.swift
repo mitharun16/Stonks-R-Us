@@ -14,13 +14,14 @@ class UserViewModel
         user = User(username: "", password: "", email: "")
     }
     
-    func createAccount(emailAddress: String, username:String, password:String)
+    func createAccount(emailAddress: String, username:String, password:String) -> Bool
     {
         self.user = User(username: username, password: password, email: emailAddress)
+        return true
     }
     func checkLogin(username:String, password:String) -> Bool
     {
-        if(username == "admin" && password == "test")
+        if(username == "Admin" && password == "test")
         {
             return true
         }
