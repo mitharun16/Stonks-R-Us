@@ -8,7 +8,9 @@
 import SwiftUI
 
 extension Color {
-    init(hex: String) {
+    
+    init(hex: String)
+    {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0
         Scanner(string: hex).scanHexInt64(&int)
@@ -35,14 +37,16 @@ extension Color {
 }
 
 
-
-struct WelcomeView: View {
+struct WelcomeView: View
+{
+    
     @State var showDetail: Bool = false
     @State private var isPresentedSignIn = false
     @State private var isPresentedSignUp = false
     @State private var emailAddress = ""
     @State private var username = ""
     @State private var password = ""
+    
     var body: some View {
         NavigationView
         {
@@ -61,10 +65,10 @@ struct WelcomeView: View {
                     Color(hex: "F17968")
                         .ignoresSafeArea()
                         .opacity(0.5)
+                    
+                    
                     VStack
                     {
-                        
-                        
                         
                         VStack
                         {

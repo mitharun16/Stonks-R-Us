@@ -35,11 +35,9 @@ struct LoginView: View {
                     Color(hex: "F17968")
                         .ignoresSafeArea()
                         .opacity(0.5)
+                    
                     VStack
                     {
-                        
-                        
-                        
                             
                         VStack
                         {
@@ -49,12 +47,16 @@ struct LoginView: View {
                                 .frame(width: 350)
                                 .cornerRadius(25)
                                 .padding(20)
-                            TextField("username", text: $username, prompt: Text("Enter Your Username").foregroundColor(Color.black))
+                            
+                            TextField("username", text: $username, prompt: Text("Enter Your Username")
+                                .foregroundColor(Color.white))
                                 .padding()
                                 .frame(width: 300, alignment: .center)
                                 .background(LinearGradient(colors: [.white.opacity(0.5), .pink.opacity(0.2)], startPoint: .topLeading, endPoint: .bottomTrailing), in: Capsule())
                                 .overlay(Capsule().stroke(Color(hex: "E3ADA5")))
-                            SecureField("username", text: $password, prompt: Text("Enter Your Password").foregroundColor(Color.black))
+                            
+                            SecureField("password", text: $password, prompt: Text("Enter Your Password")
+                                .foregroundColor(Color.white))
                                 .padding()
                                 .frame(width: 300, alignment: .center)
                                 .background(LinearGradient(colors: [.white.opacity(0.5), .pink.opacity(0.2)], startPoint: .topLeading, endPoint: .bottomTrailing), in: Capsule())
@@ -62,10 +64,11 @@ struct LoginView: View {
                             
                             
                         }
+                        
                         HStack
                         {
                             NavigationLink(destination: WelcomeView().navigationBarBackButtonHidden(), label: {
-                                Text("Go Back")
+                                Text("Cancel")
                             })
                             .fontWeight(.bold)
                             .font(Font.system(size: 20))
@@ -75,7 +78,9 @@ struct LoginView: View {
                             .buttonBorderShape(.capsule)
                             .frame(height: 100, alignment: .center)
                             .padding()
-                            Button {
+                            
+                            Button
+                            {
                                 if(username.isEmpty || password.isEmpty)
                                 {
                                     error = true
@@ -96,7 +101,6 @@ struct LoginView: View {
                             } label: {
                                 Text("Sign In")
                             }
-                            
                             .fontWeight(.bold)
                             .font(Font.system(size: 20))
                             .buttonStyle(.borderedProminent)
@@ -108,7 +112,7 @@ struct LoginView: View {
                             {
                                 if missingFields
                                 {
-                                    return Alert(title: Text("Fill all Fields"),message: Text("Check if all textfields are filled"),dismissButton: .default(Text("Got It!")))
+                                    return Alert(title: Text("Missing Information"),message: Text("Make sure that all fields are completed and try again."),dismissButton: .default(Text("Got It!")))
                                 }
                                 else
                                 {

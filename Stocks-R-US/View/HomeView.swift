@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @Binding var userViewModel: UserViewModel
+    
     var body: some View {
         NavigationView {
             VStack
             {
-                Text("HomeScreen")
+                Text("Stonks to the Moon!!!")
             }
             .navigationBarBackButtonHidden()
         }
