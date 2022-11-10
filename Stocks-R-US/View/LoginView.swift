@@ -19,8 +19,10 @@ struct LoginView: View {
     var body: some View {
         NavigationView
         {
-            GeometryReader {
-                geo in ZStack
+            GeometryReader
+            { geo in
+                
+                ZStack
                 {
                     
                     
@@ -121,7 +123,8 @@ struct LoginView: View {
                             }
                             
                         }
-                        NavigationLink(destination: HomeView(userViewModel: $userViewModel).navigationBarBackButtonHidden(), isActive: $showHomeScreen) {
+                        NavigationLink(destination: WatchlistView(userViewModel: $userViewModel).navigationBarBackButtonHidden(), isActive: $showHomeScreen)
+                        {
                             EmptyView()
                         }
                         

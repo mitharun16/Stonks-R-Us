@@ -16,7 +16,10 @@
 		20B2C3232914590000B98DB2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2C3222914590000B98DB2 /* SignUpView.swift */; };
 		20B2C3252914590A00B98DB2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2C3242914590A00B98DB2 /* LoginView.swift */; };
 		20B2C32729146D0200B98DB2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2C32629146D0200B98DB2 /* UserViewModel.swift */; };
-		20B2C32A2914814B00B98DB2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2C3292914814B00B98DB2 /* HomeView.swift */; };
+		20B2C32A2914814B00B98DB2 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2C3292914814B00B98DB2 /* WatchlistView.swift */; };
+		572D16AE291CEF08002C3A37 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D16AD291CEF08002C3A37 /* Stock.swift */; };
+		572D16B0291CF1AB002C3A37 /* WatchlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D16AF291CF1AB002C3A37 /* WatchlistViewModel.swift */; };
+		572D16B2291CF443002C3A37 /* StockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D16B1291CF443002C3A37 /* StockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +33,10 @@
 		20B2C3222914590000B98DB2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		20B2C3242914590A00B98DB2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		20B2C32629146D0200B98DB2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		20B2C3292914814B00B98DB2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		20B2C3292914814B00B98DB2 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
+		572D16AD291CEF08002C3A37 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		572D16AF291CF1AB002C3A37 /* WatchlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewModel.swift; sourceTree = "<group>"; };
+		572D16B1291CF443002C3A37 /* StockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				20B2C3202914589A00B98DB2 /* User.swift */,
+				572D16AD291CEF08002C3A37 /* Stock.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -93,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				20B2C32629146D0200B98DB2 /* UserViewModel.swift */,
+				572D16AF291CF1AB002C3A37 /* WatchlistViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -104,7 +112,8 @@
 				20B2C31C29144FCA00B98DB2 /* SplashView.swift */,
 				20B2C3222914590000B98DB2 /* SignUpView.swift */,
 				20B2C3242914590A00B98DB2 /* LoginView.swift */,
-				20B2C3292914814B00B98DB2 /* HomeView.swift */,
+				20B2C3292914814B00B98DB2 /* WatchlistView.swift */,
+				572D16B1291CF443002C3A37 /* StockView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,12 +190,15 @@
 			files = (
 				20A5C5722911AAE000B160A1 /* Stocks_R_USApp.swift in Sources */,
 				20B2C3252914590A00B98DB2 /* LoginView.swift in Sources */,
+				572D16B0291CF1AB002C3A37 /* WatchlistViewModel.swift in Sources */,
 				20B2C31B29144E8700B98DB2 /* WelcomeView.swift in Sources */,
 				20B2C3212914589A00B98DB2 /* User.swift in Sources */,
+				572D16B2291CF443002C3A37 /* StockView.swift in Sources */,
 				20B2C3232914590000B98DB2 /* SignUpView.swift in Sources */,
-				20B2C32A2914814B00B98DB2 /* HomeView.swift in Sources */,
+				20B2C32A2914814B00B98DB2 /* WatchlistView.swift in Sources */,
 				20B2C32729146D0200B98DB2 /* UserViewModel.swift in Sources */,
 				20B2C31D29144FCA00B98DB2 /* SplashView.swift in Sources */,
+				572D16AE291CEF08002C3A37 /* Stock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

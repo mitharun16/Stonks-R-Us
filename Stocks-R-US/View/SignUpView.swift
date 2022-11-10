@@ -150,7 +150,7 @@ struct SignUpView: View {
                             }
                            
                         }
-                        NavigationLink(destination: HomeView(userViewModel: $userViewModel).navigationBarBackButtonHidden(), isActive: $showHomeScreen) {
+                        NavigationLink(destination: WatchlistView(userViewModel: $userViewModel).navigationBarBackButtonHidden(), isActive: $showHomeScreen) {
                             EmptyView()
                         }
                     }
