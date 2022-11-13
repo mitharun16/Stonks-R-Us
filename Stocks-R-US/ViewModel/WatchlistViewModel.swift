@@ -12,6 +12,11 @@ class WatchlistViewModel: ObservableObject
     
     @Published var stocks = [Stock]()
     @Published var dailyMovers = [Stock]()
+    @Published var choosenSort: SortType = .TICKER
+    
+    enum SortType {
+        case TICKER, PRICE, VOLUME, PERCENTAGE
+    }
     
     init()
     {
@@ -19,10 +24,6 @@ class WatchlistViewModel: ObservableObject
         let test1 = Stock(ticker: "AAPL", company: "Apple Inc.", price: 147.27, percentageChange: 2.53, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
         let test2 = Stock(ticker: "META", company: "Meta Platforms Inc.", price: 130.01, percentageChange: -1.16, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
        
-        stocks.append( test1 )
-        stocks.append( test2 )
-        stocks.append( test1 )
-        stocks.append( test2 )
         stocks.append( test1 )
         stocks.append( test2 )
         stocks.append( test1 )
@@ -38,6 +39,19 @@ class WatchlistViewModel: ObservableObject
         dailyMovers.append( temp1 )
         dailyMovers.append( temp2 )
         dailyMovers.append( temp3 )
+        
+    }
+    
+    func add( newName: String )
+    {
+        // TOCO: implement query
+        let toAdd = Stock(ticker: newName , company: "Testing", price: 147.27, percentageChange: 2.53, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
+        stocks.append( toAdd )
+    }
+    
+    
+    func sort()
+    {
         
     }
     

@@ -11,11 +11,11 @@ import SwiftUI
 struct Stocks_R_USApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashView()
+//            SplashView()
             
             // for dev purposes skip login screens and go directly to HomeView
             // Aash -> TODO: Change back to SplashView when app is complete or for debug build
-//            WatchlistView( userViewModel: .constant( UserViewModel() ) )
+            WatchlistView( userViewModel: .constant( UserViewModel() ) )
         }
         
     }

@@ -22,64 +22,76 @@ struct WatchlistView: View
 //            GeometryReader
 //            { geo in
             
+            
             ZStack
             {
+                
+                
                 Color( hex: "F17968" )  // background color
                     .ignoresSafeArea()
-
-            
+                
+                
                 VStack
                 {
-                    
+                    NavBarOverlay( theTitle: "Watchlist" )
+
                     // Daily Movers Widget
-                    Text( "Daily Movers" )
-                        .foregroundColor( .black )
-                        .font( .title2 )
-                        .fontWeight( .bold )
-                        .frame( maxWidth: .infinity, alignment: .leading )
-                        .padding( .horizontal, 30.0 )
-                        .padding( .top, 15.0 )
-                    
-     
-                    HStack( alignment: .center )
+                    Group
                     {
-                        ForEach( theWatchlist.dailyMovers )
-                        { aStock in
+                        Text( "Daily Movers" )
+                            .foregroundColor( .black )
+                            .font( .title2 )
+                            .fontWeight( .bold )
+                            .frame( maxWidth: .infinity, alignment: .leading )
+                            .padding( .leading, 30.0 )
+                            .padding( .top, 5.0 )
+                        
+                        Group
+                        {
                             
-                            HStack
+                            
+                            HStack( alignment: .center )
                             {
-                                VStack
-                                {
-                                    Spacer()
+                                ForEach( theWatchlist.dailyMovers )
+                                { aStock in
                                     
-                                    Text( "\(aStock.percentChange, specifier: "%.2f" )%" )
-                                        .font( .system( size: 18) )
-                                        .fontWeight( .regular )
-                                        .foregroundColor( .black )
-                                        .padding( .horizontal, 15.0 )
-                                    
-                                    Spacer()
-                                    
-                                    Text( "\(aStock.ticker)" )
-                                        .font( .system( size: 18) )
-                                        .fontWeight( .bold )
-                                        .foregroundColor( .black )
-                                        .padding( .horizontal, 15.0 )
-                                    
-                                    Spacer()
+                                    HStack
+                                    {
+                                        VStack
+                                        {
+                                            Spacer()
+                                            
+                                            Text( "\(aStock.percentChange, specifier: "%.2f" )%" )
+                                                .font( .system( size: 18 ) ) 
+                                                .fontWeight( .regular )
+                                                .foregroundColor( .black )
+                                                .padding( .horizontal, 10.0 )
+                                            
+                                            Spacer()
+                                            
+                                            Text( "\(aStock.ticker)" )
+                                                .font( .system( size: 18 ) )
+                                                .fontWeight( .bold )
+                                                .foregroundColor( .black )
+                                                .padding( .horizontal, 10.0 )
+                                            
+                                            Spacer()
+                                            
+                                        }
+                                        .background( .green )
+                                        .cornerRadius( 40.0 )
+                                        .padding( .horizontal, 10.0 )
+                                    }
                                     
                                 }
-                                .background( .green )
-                                .cornerRadius( 40.0 )
-                                .padding( .horizontal, 15.0 )
                             }
-                            
+                            .padding( 20.0 )
+                            .background( Color( hex: "E3ADA5" ) )
+                            .cornerRadius( 20.0 )
                         }
-                    }
-                    .padding( 20 )
-                    .background( Color( hex: "E3ADA5" ) )
-                    .cornerRadius( 20.0 )
-
+                        
+                    } // Group end
+                    .padding( .horizontal, 20.0 )
                     
                 
                     // Add and Sort buttons
@@ -98,14 +110,14 @@ struct WatchlistView: View
 
                                 if !( (theNameInput.text?.isEmpty)! )
                                 {
-                                   // TODO: Implement code to add
-
+                                    theWatchlist.add(newName: theNameInput.text ?? "Error" )
+                                    
                                     print( "adding...")
                                 }
                                 else
                                 {
                                      // Alert message to inform user if there no valid input is given
-                                     let invalidInputAlert = UIAlertController(title: "Data Input Error", message: "Enter a valid Ticker to add to your watchlist.", preferredStyle: .alert)
+                                     let invalidInputAlert = UIAlertController(title: "Data Input Error", message: "Enter a valid Ticker to add to your watchlist. Input cannot be empty.", preferredStyle: .alert)
 
                                       invalidInputAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
 
@@ -201,14 +213,14 @@ struct WatchlistView: View
                                     HStack
                                     {
                                         
-                                        VStack
+                                        VStack( alignment: .leading )
                                         {
                                             Spacer()
                                             
                                             Text( "\(aStock.ticker)" )
                                                 .font( .system( size: 20) )
                                                 .fontWeight( .bold )
-                                                .foregroundColor( .black ) // TODO: change to Color( "E3ADA5" )
+                                                .foregroundColor( Color( hex: "E3ADA5" ) )
                                             
                                             Spacer()
                                             
@@ -242,7 +254,6 @@ struct WatchlistView: View
                     
                 } // VStack end
 
-
             
                 
     //            } // GeometryReader end
@@ -253,9 +264,7 @@ struct WatchlistView: View
                 
         } // NavigationView end
         .navigationBarBackButtonHidden()
-        .navigationBarTitle( Text( "Watchlist" ) )
-        .navigationBarTitleDisplayMode( .large )  // Aash -> TODO: Implement custom navbar to include shape, this is fine for now.
-        .navigationBarHidden( false )
+//        .overlay( NavBarOverlay( theTitle: "Watchlist" ) )
 
     }
 }
