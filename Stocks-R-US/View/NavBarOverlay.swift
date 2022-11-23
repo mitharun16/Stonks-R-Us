@@ -23,7 +23,7 @@ struct NavBarOverlay: View
                 .frame( maxWidth: .infinity, alignment: .center )
                 .padding( .horizontal, 20.0 )
                 .background( .black )
-                .foregroundColor( Color( hex: "E3ADA5" ) )
+                .foregroundColor( Color( hex: "F17968" ) )
                 .cornerRadius( 10.0 )
             
             Spacer()

@@ -175,22 +175,26 @@ struct WatchlistView: View
                         .alert( "Sort Options", isPresented: $showingSort ) {
                             Button( "Ticker Symbol" )
                             {
-                                // TODO: Implement
+                                theWatchlist.choosenSort = .TICKER
+                                theWatchlist.sort()
                                 print( "[HomeView] Sorting by Ticker Symbol")
                             }
                             Button( "Price" )
                             {
-                                // TODO: Implement
+                                theWatchlist.choosenSort = .PRICE
+                                theWatchlist.sort()
                                 print( "[HomeView] Sorting by Price")
                             }
                             Button( "Volume" )
                             {
-                                // TODO: Implement
+                                theWatchlist.choosenSort = .VOLUME
+                                theWatchlist.sort()
                                 print( "[HomeView] Sorting by Volume")
                             }
                             Button( "Percentage" )
                             {
-                                // TODO: Implement
+                                theWatchlist.choosenSort = .PERCENTAGE
+                                theWatchlist.sort()
                                 print( "[HomeView] Sorting by Percentage")
                             }
                         }
