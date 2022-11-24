@@ -208,7 +208,7 @@ struct WatchlistView: View
                     // Stock Cards List
                     List( theWatchlist.stocks )
                     { aStock in
-                        NavigationLink( destination : StockView( /* TODO: Esvar's part to implement */ ) )
+                        NavigationLink( destination : StockView(aStock: aStock))
                         {
                             ScrollView()
                             {
