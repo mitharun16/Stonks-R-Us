@@ -15,9 +15,7 @@ struct StockView: View
     @State var aStock: Stock
     var body: some View
     {
-        let today = Date()
-        let hours   = (Calendar.current.component(.hour, from: today))
-        let minutes = (Calendar.current.component(.minute, from: today))
+        
         ZStack
         {
             Color( hex: "F17968" )  // background color
@@ -25,7 +23,7 @@ struct StockView: View
             VStack
              {
                  NavBarOverlay(theTitle: aStock.ticker)
-                 Spacer()
+                 
                  Group
                  {
                      
@@ -102,8 +100,32 @@ struct StockView: View
                          Spacer()
                      }
                  }
-                 Spacer()
                  
+                 ScrollView()
+                 {
+                     Text("First News Article")
+                         .bold()
+                        // .font(.system(size: 25))
+                     Spacer()
+                     Text("Evans Hankey was of two people promoted to oversee the design team after departure of Apple's longtime product designer")
+                     Spacer()
+                     Button("Read More")
+                     {
+                         
+                     }
+                     Spacer()
+                     Text("Another News Article")
+                         .bold()
+                     Spacer()
+                     Text("Evans Hankey was of two people promoted to oversee the design team after departure of Apple's longtime product designer")
+                     Button("Read More")
+                     {
+                         
+                     }
+                 }
+                 .padding()
+                 .background( Color( hex: "E3ADA5" ) )
+                 .cornerRadius( 20.0 )
              }
         }
        
