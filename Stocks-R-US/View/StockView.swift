@@ -144,6 +144,6 @@ struct  StockView_Previews: PreviewProvider
 {
     static var previews: some View
     {
-        StockView(aStock: Stock( ticker: "AAPL", company: "Apple Inc.", price: 147.27, percentageChange: 2.53, volume: 63.12, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32 ))
+        StockView(aStock: Stock( ticker: "AAPL", company: "Apple Inc.", price: 147.27, percentageChange: 2.53, change: 3.50, volume: 63.12, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32 ))
     }
 }

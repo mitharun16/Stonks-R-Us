@@ -115,9 +115,20 @@ struct WatchlistView: View
 
                                     if !( (theNameInput.text?.isEmpty)! )
                                     {
-                                        theWatchlist.add(newName: theNameInput.text ?? "Error" )
-                                        
                                         print( "adding...")
+                                        let theAddResult = theWatchlist.add( newName: theNameInput.text ?? "Error" )
+                                        
+                                        if (!theAddResult)
+                                        {
+                                            // Alert message to inform user that stock was not added
+                                            let invalidInputAlert = UIAlertController(title: "Invalid Stock Entry", message: "Stock with this ticker could not be found. Enter a valid Ticker to add to your watchlist.", preferredStyle: .alert)
+
+                                             invalidInputAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+                                            let viewController = UIApplication.shared.windows.first!.rootViewController!
+                                            viewController.present( invalidInputAlert, animated: true, completion: nil )
+                                        }
+                                    
                                     }
                                     else
                                     {
@@ -128,8 +139,6 @@ struct WatchlistView: View
 
                                          let viewController = UIApplication.shared.windows.first!.rootViewController!
                                          viewController.present( invalidInputAlert, animated: true, completion: nil )
-
-
                                     }
 
                                 }
@@ -177,7 +186,8 @@ struct WatchlistView: View
                             .tint( Color( hex: "E3ADA5" ) )
                             .buttonBorderShape( .capsule )
                             .frame( height: 100, alignment: .center )
-                            .alert( "Sort Options", isPresented: $showingSort ) {
+                            .alert( "Sort Options", isPresented: $showingSort )
+                            {
                                 Button( "Ticker Symbol" )
                                 {
                                     theWatchlist.choosenSort = .TICKER

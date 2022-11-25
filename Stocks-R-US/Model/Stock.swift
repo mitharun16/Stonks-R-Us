@@ -13,6 +13,7 @@ class Stock: Identifiable
     var company: String
     var price: Double
     var percentChange: Double
+    var change: Double
     var volume: Double
     var dayLowHighOpen: Double
     var dayLowHighClose: Double
@@ -21,12 +22,13 @@ class Stock: Identifiable
     
     
     
-    init( ticker: String, company: String, price: Double, percentageChange: Double, volume: Double, dayLowHighOpen: Double, dayLowHighClose: Double, weekHighOpen: Double, weekLowHighClose: Double)
+    init( ticker: String, company: String, price: Double, percentageChange: Double, change: Double, volume: Double, dayLowHighOpen: Double, dayLowHighClose: Double, weekHighOpen: Double, weekLowHighClose: Double)
     {
         self.ticker = ticker
         self.company = company
         self.price = price
         self.percentChange = percentageChange
+        self.change = change
         self.volume = volume
         self.dayLowHighOpen = dayLowHighOpen
         self.dayLowHighClose = dayLowHighClose
