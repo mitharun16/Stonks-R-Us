@@ -237,14 +237,14 @@ struct WatchlistView: View
                                                 Spacer()
                                                 
                                                 Text( "\(aStock.ticker)" )
-                                                    .font( .system( size: 18) )
+                                                    .font( .system( size: 20) )
                                                     .fontWeight( .bold )
                                                     .foregroundColor( Color( hex: "E3ADA5" ) )
                                                 
                                                 Spacer()
                                                 
                                                 Text( "\(aStock.company)" )
-                                                    .font( .system( size: 10) )
+                                                    .font( .system( size: 12) )
                                                     .fontWeight( .light )
                                                     .foregroundColor( .black )
                                             }
@@ -252,14 +252,14 @@ struct WatchlistView: View
                                             Spacer()
                                             
                                             Text( "\(aStock.price, specifier: "%.2f" )" )
-                                                .font( .system( size: 14) )
+                                                .font( .system( size: 16) )
                                                 .fontWeight( .semibold )
                                                 .foregroundColor( .black )
                                             
                                             Spacer()
                                             
                                             Text( "\(aStock.percentChange, specifier: "%.2f" )%" )
-                                                .font( .system( size: 14) )
+                                                .font( .system( size: 16) )
                                                 .fontWeight( .regular )
                                                 .foregroundColor( .blue ) // TODO: change to white with colored box
                                             

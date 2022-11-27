@@ -10,9 +10,9 @@ import SwiftUI
 
 struct StockView: View
 {
-    
-    // TODO: Esvar's part to implement
+
     @State var aStock: Stock
+    
     var body: some View
     {
         
@@ -79,7 +79,7 @@ struct StockView: View
                                          .background( Color( hex: "F17968" ) )
                                          .cornerRadius( 20.0 )
                                      VStack(){
-                                         Text("52 Week Low/High").underline(color:Color(.white))
+                                         Text("Week Low/High").underline(color:Color(.white))
                                          
                                          Text("Open: "+String(aStock.weekHighOpen))
                                          Text("Close: "+String(aStock.weekLowHighClose))
@@ -88,6 +88,7 @@ struct StockView: View
                                          .cornerRadius( 20.0 )
                                  }
                                  Text("Last Updated: " + getCurrentTime())
+                                     .font( .system( size: 14 ) )
                              }
                              
                              
@@ -103,27 +104,19 @@ struct StockView: View
                  
                  ScrollView()
                  {
-                     Text("First News Article")
-                         .bold()
-                        // .font(.system(size: 25))
-                     Spacer()
-                     Text("Evans Hankey was of two people promoted to oversee the design team after departure of Apple's longtime product designer")
-                     Spacer()
-                     Button("Read More")
+                     VStack
                      {
-                         
+                         Text( aStock.newsTitle )
+                             .bold()
+                         // .font(.system(size: 25))
+                         Spacer()
+                         Text( aStock.newsDescription )
+                         Spacer()
+//                         Link( "Read More", destination: URL( string: aStock.newsLink )! )
                      }
-                     Spacer()
-                     Text("Another News Article")
-                         .bold()
-                     Spacer()
-                     Text("Evans Hankey was of two people promoted to oversee the design team after departure of Apple's longtime product designer")
-                     Button("Read More")
-                     {
-                         
-                     }
+                     .padding( 15.0 )
+
                  }
-                 .padding()
                  .background( Color( hex: "E3ADA5" ) )
                  .cornerRadius( 20.0 )
              }

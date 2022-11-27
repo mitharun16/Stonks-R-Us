@@ -19,7 +19,9 @@ class Stock: Identifiable
     var dayLowHighClose: Double
     var weekHighOpen: Double
     var weekLowHighClose: Double
-    
+    var newsTitle: String = "No Article Found"
+    var newsDescription: String = ""
+    var newsLink: String = ""
     
     
     init( ticker: String, company: String, price: Double, percentageChange: Double, change: Double, volume: Double, dayLowHighOpen: Double, dayLowHighClose: Double, weekHighOpen: Double, weekLowHighClose: Double)
