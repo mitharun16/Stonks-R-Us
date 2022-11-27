@@ -34,26 +34,26 @@ class WatchlistViewModel: ObservableObject
 //        stocks.append( test5 )
 
 
-        let temp1 = Stock(ticker: "Dow", company: "Dow Jones", price: 147.27, percentageChange: 1.2, change: 3.50, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
-        let temp2 = Stock(ticker: "S&P 500", company: "S&P 500", price: 147.27, percentageChange: -4.8, change: 3.50, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
-        let temp3 = Stock(ticker: "Nasdaq", company: "Nasdaqes", price: 147.27, percentageChange: 3.6, change: 3.50, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
+        let temp1 = Stock(ticker: "VTI", company: "Dow Jones", price: 147.27, percentageChange: 1.2, change: 3.50, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
+        let temp2 = Stock(ticker: "SPY", company: "S&P 500", price: 147.27, percentageChange: -4.8, change: 3.50, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
+        let temp3 = Stock(ticker: "NDAQ", company: "Nasdaqes", price: 147.27, percentageChange: 3.6, change: 3.50, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
 
         dailyMovers.append( temp1 )
         dailyMovers.append( temp2 )
         dailyMovers.append( temp3 )
         
         // preloaded stocks for testing - THE NEW WAY USING APIs
-        add( newName: "TSLA" )
-        add( newName: "AMZN" )
-        add( newName: "GRMN" )
-        add( newName: "GOOGL" )
+//        add( newName: "TSLA" )
+//        add( newName: "AMZN" )
+//        add( newName: "GRMN" )
+//        add( newName: "GOOGL" )
         
     }
     
     func add( newName: String ) -> Bool
     {
 
-//        let theUrl = URL( string: "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo" )!
+        //let theUrl = URL( string: "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo" )!
         let theUrl = URL( string: "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=\(newName)&apikey=ICM86I2HS5LCNVE3" )!
         print( "The Stock URL: \(theUrl) \n" )
         let theUrlSession = URLSession.shared

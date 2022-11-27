@@ -8,14 +8,30 @@
 import Foundation
 import SwiftUI
 
+
 struct StockView: View
 {
 
     @State var aStock: Stock
     
+    func color() -> String
+    {
+        if (aStock.percentChange < 0)
+        {
+            return "FF0000"
+        }
+            
+        else
+        {
+            return "00FF00"
+        }
+            
+
+    }
     var body: some View
     {
         
+            
         ZStack
         {
             Color( hex: "F17968" )  // background color
@@ -54,12 +70,12 @@ struct StockView: View
                                  }
                                  
                                  HStack{
-                                     Text( "+0.35" ).foregroundColor(Color(.white))
+                                     Text( "\(aStock.change, specifier: "%.2f" )" ).foregroundColor(Color(.white))
                                      Text( "|" ).foregroundColor(Color(.white))
-                                     Text( "+\(aStock.percentChange, specifier: "%.2f" )%" ).foregroundColor(Color(.white))
+                                     Text( "\(aStock.percentChange, specifier: "%.2f" )%" ).foregroundColor(Color(.white))
                                  }
                                  .padding()
-                                 .background(.green)
+                                 .background(Color(hex: color()))
                                  .frame(height: 28, alignment: .center)
                                  .cornerRadius(50)
                                  VStack(){
@@ -112,7 +128,7 @@ struct StockView: View
                          Spacer()
                          Text( aStock.newsDescription )
                          Spacer()
-//                         Link( "Read More", destination: URL( string: aStock.newsLink )! )
+                        Link( "Read More", destination: URL( string: aStock.newsLink )! )
                      }
                      .padding( 15.0 )
 
