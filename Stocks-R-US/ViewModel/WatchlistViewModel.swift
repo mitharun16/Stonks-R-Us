@@ -109,8 +109,10 @@ class WatchlistViewModel: ObservableObject
     
         theJsonQuery.resume()
         
-        self.addNewsInfo( ticker: newName )
-
+        if ( newName != "VTI" && newName != "SPY" && newName != "NDAQ" )
+        {
+            self.addNewsInfo( ticker: newName )
+        }
         print( "Successfully Added Stock" )
         return true
     }
