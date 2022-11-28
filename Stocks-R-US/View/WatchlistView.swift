@@ -14,6 +14,20 @@ struct WatchlistView: View
     @State private var showingSort = false
     @StateObject var theWatchlist = WatchlistViewModel()
     
+    func colorForChange( thePercentChange: Double ) -> String
+    {
+        if ( thePercentChange < 0 )
+        {
+            return "FF0000" // red
+        }
+        else
+        {
+            return "19A63C" // green
+        }
+            
+    }
+    
+   
     var body: some View
     {
         
@@ -80,7 +94,8 @@ struct WatchlistView: View
                                                 Spacer()
                                                 
                                             }
-                                            .background( .green )
+//                                            .background( Color( hex: colorForChange( aStock.percentChange ) ) )
+                                            .background( Color( hex: "F17968" ) )
                                             .cornerRadius( 40.0 )
                                             .padding( .horizontal, 10.0 )
                                         }
@@ -89,7 +104,7 @@ struct WatchlistView: View
                                 }
 //                                .padding( 20.0 )
                                 .padding( .horizontal, 20.0 )
-                                .padding( .top, 2.0 )
+                                .padding( .top, 1.0 )
                                 .background( Color( hex: "E3ADA5" ) )
                                 .cornerRadius( 20.0 )
                                 .frame( height: geo.size.height * 0.20 )
@@ -261,7 +276,8 @@ struct WatchlistView: View
                                             Text( "\(aStock.percentChange, specifier: "%.2f" )%" )
                                                 .font( .system( size: 16) )
                                                 .fontWeight( .regular )
-                                                .foregroundColor( .blue ) // TODO: change to white with colored box
+                                                .foregroundColor( .blue )
+//                                                .foregroundColor( colorForChange( thePercentChange: aStock.percentChange ) )
                                             
                                             Spacer()
                                         } // HStack end
@@ -270,7 +286,6 @@ struct WatchlistView: View
                                 }
                             }
                         } // List end
-//                        .frame( height: geo.size.height * 0.70 )
                         
                     } // VStack end
 
@@ -284,7 +299,6 @@ struct WatchlistView: View
                 
         } // NavigationView end
         .navigationBarBackButtonHidden()
-//        .overlay( NavBarOverlay( theTitle: "Watchlist" ) )
 
     }
 }

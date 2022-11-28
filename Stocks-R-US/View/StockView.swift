@@ -14,20 +14,19 @@ struct StockView: View
 
     @State var aStock: Stock
     
-    func color() -> String
+    func colorForChange() -> String
     {
-        if (aStock.percentChange < 0)
+        if ( aStock.percentChange < 0 )
         {
-            return "FF0000"
+            return "FF0000" // red
         }
-            
         else
         {
-            return "00FF00"
+            return "19A63C" // green
         }
             
-
     }
+    
     var body: some View
     {
         
@@ -75,7 +74,7 @@ struct StockView: View
                                      Text( "\(aStock.percentChange, specifier: "%.2f" )%" ).foregroundColor(Color(.white))
                                  }
                                  .padding()
-                                 .background(Color(hex: color()))
+                                 .background(Color(hex: colorForChange() ))
                                  .frame(height: 28, alignment: .center)
                                  .cornerRadius(50)
                                  VStack(){
@@ -124,11 +123,10 @@ struct StockView: View
                      {
                          Text( aStock.newsTitle )
                              .bold()
-                         // .font(.system(size: 25))
                          Spacer()
                          Text( aStock.newsDescription )
                          Spacer()
-                        Link( "Read More", destination: URL( string: aStock.newsLink )! )
+                         Link( "Read More", destination: URL( string: aStock.newsLink )! )
                      }
                      .padding( 15.0 )
 

@@ -34,19 +34,18 @@ class WatchlistViewModel: ObservableObject
 //        stocks.append( test5 )
 
 
-        let temp1 = Stock(ticker: "VTI", company: "Dow Jones", price: 147.27, percentageChange: 1.2, change: 3.50, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
-        let temp2 = Stock(ticker: "SPY", company: "S&P 500", price: 147.27, percentageChange: -4.8, change: 3.50, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
-        let temp3 = Stock(ticker: "NDAQ", company: "Nasdaqes", price: 147.27, percentageChange: 3.6, change: 3.50, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
-
-        dailyMovers.append( temp1 )
-        dailyMovers.append( temp2 )
-        dailyMovers.append( temp3 )
+//        let temp1 = Stock(ticker: "VTI", company: "Dow Jones", price: 147.27, percentageChange: 1.2, change: 3.50, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
+//        let temp2 = Stock(ticker: "SPY", company: "S&P 500", price: 147.27, percentageChange: -4.8, change: 3.50, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
+//        let temp3 = Stock(ticker: "NDAQ", company: "Nasdaqes", price: 147.27, percentageChange: 3.6, change: 3.50, volume: 85.55, dayLowHighOpen: 142.87, dayLowHighClose: 147.26, weekHighOpen: 143.76, weekLowHighClose: 148.32)
+//
+//        dailyMovers.append( temp1 )
+//        dailyMovers.append( temp2 )
+//        dailyMovers.append( temp3 )
         
-        // preloaded stocks for testing - THE NEW WAY USING APIs
-//        add( newName: "TSLA" )
-//        add( newName: "AMZN" )
-//        add( newName: "GRMN" )
-//        add( newName: "GOOGL" )
+        add( newName: "VTI" )
+        add( newName: "SPY" )
+        add( newName: "NDAQ" )
+        
         
     }
     
@@ -96,7 +95,15 @@ class WatchlistViewModel: ObservableObject
             
             let toAdd = Stock( ticker: theTicker , company: theTicker, price: thePrice ?? 0.0, percentageChange: thePercentChange ?? 0.0, change: theChange ?? 0.0, volume: theVolume ?? 0.0, dayLowHighOpen: theOpen ?? 0.0, dayLowHighClose: theClose ?? 0.0, weekHighOpen: theHigh ?? 0.0, weekLowHighClose: theLow ?? 0.0 )
             
-            self.stocks.append( toAdd )
+            if ( newName == "VTI" || newName == "SPY" || newName == "NDAQ" )
+            {
+                self.dailyMovers.append( toAdd )
+            }
+            else
+            {
+                self.stocks.append( toAdd )
+            }
+            
 
         } )
     
