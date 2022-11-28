@@ -126,7 +126,9 @@ struct StockView: View
                          Spacer()
                          Text( aStock.newsDescription )
                          Spacer()
-                         Link( "Read More", destination: URL( string: aStock.newsLink )! )
+                         Link( "Read More", destination: (URL( string: aStock.newsLink ) ?? URL(string: "https://www.marketwatch.com/latest-news?mod=side_nav")!) )
+                         
+//                         URL(string: "https://www.marketwatch.com/latest-news?mod=side_nav")
                      }
                      .padding( 15.0 )
 

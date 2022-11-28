@@ -21,6 +21,8 @@
 		572D16B0291CF1AB002C3A37 /* WatchlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D16AF291CF1AB002C3A37 /* WatchlistViewModel.swift */; };
 		572D16B2291CF443002C3A37 /* StockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D16B1291CF443002C3A37 /* StockView.swift */; };
 		572D16B429206581002C3A37 /* NavBarOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D16B329206581002C3A37 /* NavBarOverlay.swift */; };
+		57F14175293574960004C265 /* DailyMoversView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F14174293574960004C265 /* DailyMoversView.swift */; };
+		57F141772935786A0004C265 /* StocklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F141762935786A0004C265 /* StocklistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		572D16AF291CF1AB002C3A37 /* WatchlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewModel.swift; sourceTree = "<group>"; };
 		572D16B1291CF443002C3A37 /* StockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockView.swift; sourceTree = "<group>"; };
 		572D16B329206581002C3A37 /* NavBarOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarOverlay.swift; sourceTree = "<group>"; };
+		57F14174293574960004C265 /* DailyMoversView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMoversView.swift; sourceTree = "<group>"; };
+		57F141762935786A0004C265 /* StocklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocklistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				20B2C3222914590000B98DB2 /* SignUpView.swift */,
 				20B2C3242914590A00B98DB2 /* LoginView.swift */,
 				20B2C3292914814B00B98DB2 /* WatchlistView.swift */,
+				57F14174293574960004C265 /* DailyMoversView.swift */,
+				57F141762935786A0004C265 /* StocklistView.swift */,
 				572D16B1291CF443002C3A37 /* StockView.swift */,
 				572D16B329206581002C3A37 /* NavBarOverlay.swift */,
 			);
@@ -192,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20A5C5722911AAE000B160A1 /* Stocks_R_USApp.swift in Sources */,
+				57F14175293574960004C265 /* DailyMoversView.swift in Sources */,
 				20B2C3252914590A00B98DB2 /* LoginView.swift in Sources */,
 				572D16B0291CF1AB002C3A37 /* WatchlistViewModel.swift in Sources */,
 				20B2C31B29144E8700B98DB2 /* WelcomeView.swift in Sources */,
@@ -203,6 +210,7 @@
 				20B2C31D29144FCA00B98DB2 /* SplashView.swift in Sources */,
 				572D16B429206581002C3A37 /* NavBarOverlay.swift in Sources */,
 				572D16AE291CEF08002C3A37 /* Stock.swift in Sources */,
+				57F141772935786A0004C265 /* StocklistView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

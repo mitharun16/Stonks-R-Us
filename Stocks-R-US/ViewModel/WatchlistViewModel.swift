@@ -52,7 +52,7 @@ class WatchlistViewModel: ObservableObject
     func add( newName: String ) -> Bool
     {
 
-        //let theUrl = URL( string: "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo" )!
+//        let theUrl = URL( string: "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo" )!
         let theUrl = URL( string: "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=\(newName)&apikey=ICM86I2HS5LCNVE3" )!
         print( "The Stock URL: \(theUrl) \n" )
         let theUrlSession = URLSession.shared
@@ -139,10 +139,10 @@ class WatchlistViewModel: ObservableObject
             }
             
             print( "Full News JSON response: " )
-            print( theJsonResult )
+//            print( theJsonResult )
             
             let theInfo = theJsonResult[ "data" ] as! NSArray
-//            print( "THE DATA: \(theInfo)" )
+            print( "The News Info: \(theInfo[0])" )
             
             let y = theInfo[0] as? [String: AnyObject]
             let theTitle: String = String((y!["title"] as? NSString) ?? "n/a")

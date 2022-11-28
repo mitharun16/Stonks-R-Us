@@ -14,19 +14,6 @@ struct WatchlistView: View
     @State private var showingSort = false
     @StateObject var theWatchlist = WatchlistViewModel()
     
-    func colorForChange( thePercentChange: Double ) -> String
-    {
-        if ( thePercentChange < 0 )
-        {
-            return "FF0000" // red
-        }
-        else
-        {
-            return "19A63C" // green
-        }
-            
-    }
-    
    
     var body: some View
     {
@@ -68,38 +55,10 @@ struct WatchlistView: View
                                 {
                                     ForEach( theWatchlist.dailyMovers )
                                     { aStock in
-                                        
                                         HStack
                                         {
-                                            VStack
-                                            {
-                                                Spacer()
-                                                
-                                                Text( "\(aStock.percentChange, specifier: "%.2f" )%" )
-                                                    .font( .system( size: 14 ) )
-                                                    .fontWeight( .regular )
-                                                    .foregroundColor( .black )
-                                                    .padding( .horizontal, 10.0 )
-                                                    .frame( width: geo.size.height * 0.10 )
-                                                
-                                                Spacer()
-                                                
-                                                Text( "\(aStock.ticker)" )
-                                                    .font( .system( size: 14 ) )
-                                                    .fontWeight( .bold )
-                                                    .foregroundColor( .black )
-                                                    .padding( .horizontal, 10.0 )
-                                                    .frame( width: geo.size.height * 0.10 )
-                                                
-                                                Spacer()
-                                                
-                                            }
-//                                            .background( Color( hex: colorForChange( aStock.percentChange ) ) )
-                                            .background( Color( hex: "F17968" ) )
-                                            .cornerRadius( 40.0 )
-                                            .padding( .horizontal, 10.0 )
+                                            DailyMoversWidget( theStock: aStock )
                                         }
-                                        
                                     }
                                 }
 //                                .padding( 20.0 )
@@ -244,44 +203,7 @@ struct WatchlistView: View
                                 {
                                     VStack
                                     {
-                                        HStack
-                                        {
-                                            
-                                            VStack( alignment: .leading )
-                                            {
-                                                Spacer()
-                                                
-                                                Text( "\(aStock.ticker)" )
-                                                    .font( .system( size: 20) )
-                                                    .fontWeight( .bold )
-                                                    .foregroundColor( Color( hex: "E3ADA5" ) )
-                                                
-                                                Spacer()
-                                                
-                                                Text( "\(aStock.company)" )
-                                                    .font( .system( size: 12) )
-                                                    .fontWeight( .light )
-                                                    .foregroundColor( .black )
-                                            }
-                                            
-                                            Spacer()
-                                            
-                                            Text( "\(aStock.price, specifier: "%.2f" )" )
-                                                .font( .system( size: 16) )
-                                                .fontWeight( .semibold )
-                                                .foregroundColor( .black )
-                                            
-                                            Spacer()
-                                            
-                                            Text( "\(aStock.percentChange, specifier: "%.2f" )%" )
-                                                .font( .system( size: 16) )
-                                                .fontWeight( .regular )
-                                                .foregroundColor( .blue )
-//                                                .foregroundColor( colorForChange( thePercentChange: aStock.percentChange ) )
-                                            
-                                            Spacer()
-                                        } // HStack end
-                                        
+                                        StocklistView( aStock: aStock )
                                     } // VStack end
                                 }
                             }
