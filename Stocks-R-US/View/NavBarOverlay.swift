@@ -29,11 +29,11 @@ struct NavBarOverlay: View
             Spacer()
             
             Image( "LogoSmaller" )
-                .scaledToFit()
-                .frame( width: 30.0, height: 50.0, alignment: .center )
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame( width: 50.0, height: 50.0, alignment: .center )
                 .opacity( 1.0 )
-                .padding( .trailing, 20.0 )
-                .cornerRadius( 10.0 )
+                .cornerRadius( 13.0 )
             
             Spacer()
         }
