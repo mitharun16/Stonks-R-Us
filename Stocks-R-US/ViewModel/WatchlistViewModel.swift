@@ -89,7 +89,7 @@ class WatchlistViewModel: ObservableObject
             let theLow = Double( theInfo["04. low"] as! String )
             let thePrice = Double( theInfo["05. price"] as! String )
             let theVolume = Double( theInfo["06. volume"] as! String )
-            var percentChange = theInfo["10. change percent"] as! String
+            let percentChange = theInfo["10. change percent"] as! String
             let thePercentChange = Double( percentChange.dropLast() )
             let theChange = Double( theInfo["09. change"] as! String )
             
@@ -101,26 +101,22 @@ class WatchlistViewModel: ObservableObject
             }
             else
             {
-                self.stocks.append( toAdd )
+                self.addNewsInfo( aStock: toAdd )
             }
             
 
         } )
     
         theJsonQuery.resume()
-        
-        if ( newName != "VTI" && newName != "SPY" && newName != "NDAQ" )
-        {
-            self.addNewsInfo( ticker: newName )
-        }
+    
         print( "Successfully Added Stock" )
         return true
     }
     
-    func addNewsInfo( ticker: String )
+    func addNewsInfo( aStock: Stock )
     {
 
-        let theUrl = URL( string: "https://api.marketaux.com/v1/news/all?symbols=\(ticker)&filter_entities=true&language=en&api_token=bYBiS1NslyG5ZMqRUB5TADYfVF215Th9Ots8UGZE" )!
+        let theUrl = URL( string: "https://api.marketaux.com/v1/news/all?symbols=\(aStock.ticker)&filter_entities=true&language=en&api_token=bYBiS1NslyG5ZMqRUB5TADYfVF215Th9Ots8UGZE" )!
         print( "The News URL: \(theUrl) \n" )
         let theUrlSession = URLSession.shared
         
@@ -149,9 +145,11 @@ class WatchlistViewModel: ObservableObject
             let theDescription: String = String((y!["description"] as? NSString) ?? "n/a")
             let theLink: String = String((y!["url"] as? NSString) ?? "n/a")
             
-            self.stocks.last?.newsTitle = theTitle
-            self.stocks.last?.newsDescription = theDescription
-            self.stocks.last?.newsLink = theLink
+            aStock.newsTitle = theTitle
+            aStock.newsDescription = theDescription
+            aStock.newsLink = theLink
+            
+            self.stocks.append( aStock )
 
         } )
     
